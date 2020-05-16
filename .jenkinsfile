@@ -4,6 +4,25 @@ pipeline {
     stage('Stage Build') {
       steps {
         echo 'Hello world!'
+		mvn clean
+      }
+    }
+	stage('Stage Deploy') {
+      steps {
+        echo 'Deploy'
+		mvn build
+      }
+    }
+	stage('Stage Test') {
+      steps {
+        echo 'Test!'
+		mvn test
+      }
+    }
+	stage('Stage Release') {
+      steps {
+        echo 'Release!'
+		
       }
     }
   }
